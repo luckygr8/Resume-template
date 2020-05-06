@@ -22,6 +22,9 @@ body{
 .f24{
     font-size: 24px;
 }
+.f36{
+    font-size: 36px;
+}
 .h1{
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
@@ -101,10 +104,11 @@ body{
     background-color: #aaa;
     top: 0;
     left: 0;
+    z-index: 5;
 }
-.top-nav-item{
+.top-nav-item{  
+    margin: 10px;
     padding: 5px;
-    margin: 5px;
 }
 #side-nav .row{
     margin-top: 15px;
@@ -138,22 +142,94 @@ body{
     border: 2px dashed black;
     padding: 5px;
 }
+.h{
+    height: 500px;
+}
 #name-svg{
     position: fixed;
     top: 40px;
+    z-index: 5;
+}
+hr{
+    width: 80%;
+}
+
+.bar-outer{
+    height: 5px;
+    width: 100%;
+    background-color: rgba(41, 35, 35, 0.151);
+}
+.bar-fill-blue{
+    margin: 0px;
+    padding: 0px;
+    height: 5px;
+    background-color:#0015D1;
+    width: 0%;
+}
+.bar-fill-green{
+    margin: 0px;
+    padding: 0px;
+    height: 5px;
+    background-color:#219653;
+    width: 0%;
+}
+.bar-fill-pink{
+    margin: 0px;
+    padding: 0px;
+    height: 5px;
+    background-color:#BD0EDA;
+    width: 0%;
+}
+.fill-75{
+    width: 75%;
+}
+.fill-50{
+    width: 50%;
+}
+.fill-100{
+    width: 100%;
+}
+.custom-ml-exp{
+    margin-left: 170px;
+}
+.m0p0{
+    margin: 0px;
+    padding: 0px;
+}
+.m0{
+    margin: 0px;
+}
+.p0{
+    margin: 0px;
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     body{
-        background-color: #222;
+        background-color: #fff;
     }
     #top-nav{
         display: block;
     }
+    #side-nav{
+        display: none;
+    }
     #name-svg{
         display: none;
     }
+    #SKILLS .col-lg-6 .flex-dir-col{
+        margin: 0 auto;
+    }
+    #SOFT-SKILLS .col-lg-6 .flex-dir-col{
+        margin: 0 auto;
+    }
+    #OTHER-SKILLS .col-lg-6 .flex-dir-col{
+        margin: 0 auto;
+    }
+    #EXPERIENCE .col-lg-10 div{
+        margin-left: 0px;
+    }
+    
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
@@ -169,6 +245,18 @@ body{
     #name-svg{
         display: none;
     }
+    #SKILLS .col-lg-6 .flex-dir-col{
+        margin: 0 auto;
+    }
+    #SOFT-SKILLS .col-lg-6 .flex-dir-col{
+        margin: 0 auto;
+    }
+    #OTHER-SKILLS .col-lg-6 .flex-dir-col{
+        margin: 0 auto;
+    }
+    /*#EXPERIENCE .col-lg-10 div{
+        margin-left: 0px;
+    }*/
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -200,6 +288,15 @@ body{
     }
     #top-nav{
         display: none;
+    }
+    #SKILLS .col-lg-6 .flex-dir-col{
+        margin: 0px;
+    }
+    #SOFT-SKILLS .col-lg-6 .flex-dir-col{
+        margin: 0px;
+    }
+    #OTHER-SKILLS .col-lg-6 .flex-dir-col{
+        margin: 0px;
     }
 }
 

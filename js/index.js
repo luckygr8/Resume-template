@@ -23,4 +23,43 @@ $(document).ready(()=>{
 
     // code for side navigation
 
+    // technical skills
+    function animateTechnicalSkillBars(){
+        let skills = [75,50,75]
+        let skillsbars = $($('#SKILLS-BARS').children()).filter(':odd')
+        let i=0
+        for(each of skillsbars){
+            $(each).find('.bar-fill-blue').animate({
+                width:`${skills[i++]}%`,
+            },1500)
+        }
+    }
+
+    // soft skills
+    function animateSoftSkillBars(){
+        let skills = [100,50,75]
+        let skillsbars = $($('#SOFT-SKILLS-BARS').children()).filter(':odd')
+        let i=0
+        for(each of skillsbars){
+            $(each).find('.bar-fill-green').animate({
+                width:`${skills[i++]}%`,
+            },1500)
+        }
+    }
+
+    // other skills
+    function animateOtherSkillBars(){
+        let skills = [100,75,50,50,50]
+        let skillsbars = $($('#OTHER-SKILLS-BARS').children()).filter(':odd')
+        let i=0
+        for(each of skillsbars){
+            $(each).find('.bar-fill-pink').animate({
+                width:`${skills[i++]}%`,
+            },1500)
+        }
+    }
+
+    animateSoftSkillBars()
+    animateTechnicalSkillBars()
+    animateOtherSkillBars()
 })
