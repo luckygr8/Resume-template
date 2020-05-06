@@ -123,6 +123,9 @@ body{
 .blue-color{
     color: #0015D1;
 }
+.top-xs{
+    margin-top: 15px;
+}
 .top-sm{
     margin-top: 30px;
 }
@@ -152,6 +155,9 @@ body{
 }
 hr{
     width: 80%;
+}
+.lh{
+    line-height: 30px;
 }
 
 .bar-outer{
@@ -201,6 +207,9 @@ hr{
 }
 .p0{
     margin: 0px;
+}
+.m-auto{
+    margin: 0 auto;
 }
 
 /* Extra small devices (phones, 600px and down) */
