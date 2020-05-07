@@ -99,9 +99,9 @@ body{
 #side-nav{
     padding: 5px;
     width: 10%;
+    top: 100px;
 }
 #top-nav{
-    background-color: #aaa;
     top: 0;
     left: 0;
     z-index: 5;
@@ -157,7 +157,7 @@ hr{
     width: 80%;
 }
 .lh{
-    line-height: 30px;
+    line-height: 40px;
 }
 
 .bar-outer{
@@ -211,12 +211,18 @@ hr{
 .m-auto{
     margin: 0 auto;
 }
+.elevated-box{
+    margin-top: 10px;
+    box-shadow: 0px 0px 3px 2px rgba(128, 128, 128, 0.384);
+    padding: 40px;
+    border-radius: 20px;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    body{
+    /*body{
         background-color: #fff;
-    }
+    }*/
     #top-nav{
         display: block;
     }
@@ -238,13 +244,19 @@ hr{
     #EXPERIENCE .col-lg-10 div{
         margin-left: 0px;
     }
+    #CONTACT .row .h2{
+        font-size: medium;
+    }
+    #EDUCATION .container-fluid .row{
+        margin-left: 0px;
+    }
     
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-    body{
+    /*body{
         background-color: #555;
-    }
+    }*/
     #INTRODUCTION .d-flex{
         justify-content: center;
     }
@@ -263,6 +275,10 @@ hr{
     #OTHER-SKILLS .col-lg-6 .flex-dir-col{
         margin: 0 auto;
     }
+    .top-nav-item i{
+        font-size: 25px;
+        margin-top: 10px;
+    }
     /*#EXPERIENCE .col-lg-10 div{
         margin-left: 0px;
     }*/
@@ -270,23 +286,26 @@ hr{
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    body{
+    /*body{
         background-color: #999;
-    }
+    }*/
     #side-nav{
         display: none;
+    }
+    .top-nav-item i{
+        font-size: 35px;
+        margin-top: 15px;
     }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    body{
+    /*body{
         background-color: #BBB
-    }
+    }*/
     #side-nav{
         display: block;
         margin-left: 5%;
-        margin-top: 15%;
     }
     #INTRODUCTION .d-flex{
         justify-content: start;
@@ -311,12 +330,11 @@ hr{
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-    body{
+    /*body{
         background-color: #FFF;
-    }
+    }*/
    #side-nav{
     display: block;
        margin-left: 7%;
-       margin-top: 15%;
    }
 } 
