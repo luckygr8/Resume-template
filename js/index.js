@@ -102,12 +102,30 @@ $(document).ready(()=>{
         }
       })
     /*new Waypoint({
-      element: document.getElementById('SOFT-SKILLS'),
+      element: document.getElementById('INTRODUCTION'),
       handler: function() {
-          animateSoftSkillBars()
+        toggleSideNavItem(allSideNavItems[0])
       }
     })
-    */
+    new Waypoint({
+        element: document.getElementById('SKILLS'),
+        handler: function() {
+            toggleSideNavItem(allSideNavItems[1])
+        }
+    })
+    new Waypoint({
+      element: document.getElementById('EXPERIENCE'),
+      handler: function() {
+          toggleSideNavItem(allSideNavItems[2])
+      }
+    })
+    new Waypoint({
+      element: document.getElementById('EDUCATION'),
+      handler: function() {
+          toggleSideNavItem(allSideNavItems[3])
+      }
+    })*/
+
 
     // code for side navigation
 
