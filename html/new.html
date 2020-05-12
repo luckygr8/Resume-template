@@ -24,7 +24,6 @@
         }
         body{
             font-family: 'Roboto',sans-serif;
-            font-size: 2vw;
         }
 
 
@@ -32,7 +31,7 @@
             box-shadow: 0px 0px 2px 4px rgba(128, 128, 128, 0.37);
         }
         .section-break{
-            margin-top: 150px;
+            padding-top: 150px;
         }
 
 
@@ -107,10 +106,23 @@
         .t-blue{color:#0015D1;}
         .t-green{color:#219653;}
         .t-pink{color:#BD0EDA;}
-        .fill-75{width: 75%;}
+        /*.fill-75{width: 75%;}
         .fill-50{width: 50%;}
-        .fill-100{width: 100%;}
+        .fill-100{width: 100%;}*/
         .w60{width: 60%;}
+        .side-nav-item{
+            transition: all .4s;
+        }
+        .side-nav-item:hover{
+            background-color: grey;
+            border-radius: 5px;
+            color: whitesmoke;
+        }
+        .active-side-link{
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+        }
 
 
         #side-nav{
@@ -120,7 +132,8 @@
             width: 15%;
             font-size: 1.3vw;
             color: rgb(53, 43, 43);
-            background-color: white;
+            cursor: default;
+            /*background-color: white;*/
         }
         #top-nav{
             position: fixed;
@@ -235,7 +248,7 @@
 </head>
 <body>
 
-    <!-- SIDE NAVIGATION -->
+    <!-- SIDE NAVIGATION 
     <div class="container-fluid elevation" id="side-nav">
         <div class="row pt-2">
             <div class="col-3"><img src="../res/svg/arrowhead.svg" alt=""></div>
@@ -258,7 +271,25 @@
             <div class="col-9" id="n4">Contact</div>
         </div>
     </div>
-    <!-- SIDE NAVIGATION -->
+     SIDE NAVIGATION -->
+
+     <div class="container-fluid" id="side-nav">
+        <div class="row pt-2">
+            <div class="side-nav-item tac col-12 active-side-link" id="n1">Home</div>
+        </div>
+        <div class="row pt-2">
+            <div class="side-nav-item tac col-12" id="n1">Skills</div>
+        </div>
+        <div class="row pt-2">
+            <div class="side-nav-item tac col-12" id="n1">Experience</div>
+        </div>
+        <div class="row pt-2">
+            <div class=" side-nav-item tac col-12" id="n1">Education</div>
+        </div>
+        <div class="row pt-2">
+            <div class="side-nav-item tac col-12" id="n1">Contact</div>
+        </div>
+    </div>
 
     <!-- TOP NAVIGATION -->
     <div class="container-fluid elevation" id="top-nav">
@@ -476,7 +507,7 @@
                     <!-- ITEM -->
                     <div class="row mt-md">
                         <div class="col-lg-8 col-12">
-                            <div class="row"><i class="fas fa-user-graduate fa-2x t-blue"></i></div>
+                            <div class="row"><i class="fas fa-user-graduate fa-4x t-blue"></i></div>
                             <div class="row mt-sm" style="line-height: 60px;">
                                 <div class="f36 med">University &nbsp;&nbsp;</div>
                                 <div class="f20 lig">2010-2014</div>
@@ -499,7 +530,7 @@
                     <!-- ITEM -->
                     <div class="row mt-md">
                         <div class="col-lg-8 col-12">
-                            <div class="row"><i class="fas fa-school fa-2x t-blue"></i></div>
+                            <div class="row"><i class="fas fa-school fa-4x t-blue"></i></div>
                             <div class="row mt-sm" style="line-height: 60px;">
                                 <div class="f36 med">High School &nbsp;&nbsp;</div>
                                 <div class="f20 lig">2010-2014</div>
@@ -526,7 +557,7 @@
            <!-- MAIN BOX -->
 
             <!-- FOOTER-->
-            <div class="container-fluid section-break" style="background-color: black;color: white;padding-top: 150px;padding-bottom: 30px;" id="CONTACT">
+            <div class="container-fluid section-break elevation mt-lg" style="background-color: black;color: white;padding-top: 150px;padding-bottom: 30px;" id="CONTACT">
 
                 <!-- feel free to contact-->
                 <div class="row">
@@ -536,12 +567,12 @@
                 <!-- Icons -->
                 <div class="row mt-sm">
                     <div class="m-auto">
-                        <i class="m-2 p-2 fa-2x fab fa-facebook-f"></i>
-                        <i class="m-2 p-2 fa-2x fab fa-github"></i>
-                        <i class="m-2 p-2 fa-2x fab fa-facebook-messenger"></i>
-                        <i class="m-2 p-2 fa-2x fab fa-linkedin"></i>
-                        <i class="m-2 p-2 fa-2x fab fa-whatsapp"></i>
-                        <i class="m-2 p-2 fa-2x fab fa-twitter"></i>
+                        <i class="contact-item m-2 p-2 fa-2x fab fa-facebook-f"></i>
+                        <i class="contact-item m-2 p-2 fa-2x fab fa-github"></i>
+                        <i class="contact-item m-2 p-2 fa-2x fab fa-facebook-messenger"></i>
+                        <i class="contact-item m-2 p-2 fa-2x fab fa-linkedin"></i>
+                        <i class="contact-item m-2 p-2 fa-2x fab fa-whatsapp"></i>
+                        <i class="contact-item m-2 p-2 fa-2x fab fa-twitter"></i>
                     </div>
                 </div>
 
@@ -565,44 +596,128 @@
 
 </body>
     <script>
+        
+        $(document).ready(()=>{
 
-        /*reset = () => $('.col-9').css('background-color','#00000000')
+            let isTech = false , isSoft = false , isOther = false;
+            let ids = ['INTRODUCTION','TECHNICAL-SKILLS','EXPERIENCE','EDUCATION','CONTACT']
+            let topNavs = document.getElementsByClassName('top-nav-item')
+            let sideNavs = document.getElementsByClassName('side-nav-item')
+            
+            function setTopNav(){
+                for(let i=0 ; i < topNavs.length ; i++){
+                    $(topNavs[i]).click(function(){
+                        $('html, body').animate({
+                            scrollTop: $(`#${ids[i]}`).offset().top
+                        }, 700,'easeInOutCirc')
+                    })
+                }
+            }
+            setTopNav()
 
+            function clearAllSideNavs(){
+                for(let i=0 ; i < sideNavs.length ; i++){
+                    $(sideNavs[i]).removeClass('active-side-link')
+                }
+            }
 
-        new Waypoint({
-        element: document.getElementById('con1'),
-        handler: () => {
-            reset()
-            $('#n1').css('background-color','#ff0000')
-        },
-        offset: -300
-    })
+            function setSideNav(){
+                for(let i=0 ; i < sideNavs.length ; i++){
+                    $(sideNavs[i]).click(function(){
+                        transitionSideNavTo(sideNavs[i])
+                        $('html, body').animate({
+                            scrollTop: $(`#${ids[i]}`).offset().top
+                        }, 700,'easeInOutCirc')
+                    })
+                }
+            }
+            setSideNav()
 
-        new Waypoint({
-        element: document.getElementById('con2'),
-        handler: () => {
-            reset()
-            $('#n2').css('background-color','#ff0000')
-        },
-        offset: 'bottom-in-view'
-    })
+            function transitionSideNavTo(navItem){
+                clearAllSideNavs()
+                $(navItem).addClass('active-side-link')
+            }
+            
 
-        new Waypoint({
-        element: document.getElementById('con3'),
-        handler: () => {
-            reset()
-            $('#n3').css('background-color','#ff0000')
-        },
-        offset: 'bottom-in-view'
-    })
+            function animateContactItems(){
+                let arr = document.getElementsByClassName('contact-item')
+                for(let i=0;i<arr.length;i++)
+                {
+                    $(arr[i]).animate({fontSize:'40px'},1000,'easeInOutElastic').
+                    animate({fontSize:'30px'},1000,'easeInOutElastic')
+                }
+            }
 
-        new Waypoint({
-        element: document.getElementById('con4'),
-        handler: () => {
-            reset()
-            $('#n4').css('background-color','#ff0000')
-        },
-        offset: 'bottom-in-view'
-    })*/
+            function animateSoftSkillBars(){
+                let softSkillProgress = [100,50,75]
+                let i=0
+                let arr = document.getElementsByClassName('bar-fill green')
+                for(each of arr)
+                $(each).animate({width:'0px'},0).animate({width:`${softSkillProgress[i++]}%`},1500,'easeOutBounce')
+                isSoft = true
+            }
+
+            function animateOtherSkillBars(){
+                let otherSkillProgress = [100,75,50,50,50]
+                let i=0
+                let arr = document.getElementsByClassName('bar-fill pink')
+                for(each of arr)
+                $(each).animate({width:'0px'},0).animate({width:`${otherSkillProgress[i++]}%`},1500,'easeOutBounce')
+                isOther = true
+            }
+
+            function animateTechSkillBars(){
+                let techSkillProgress = [75,50,75]
+                let i=0
+                let arr = document.getElementsByClassName('bar-fill blue')
+                for(each of arr)
+                $(each).animate({width:'0px'},0).animate({width:`${techSkillProgress[i++]}%`},1500,'easeOutBounce')
+                isTech = true
+            }
+
+            function setScrollWaypoints(){
+
+                for(let i=0;i<ids.length;i++)
+                    new Waypoint({
+                    element: document.getElementById(ids[i]),
+                    handler: () => {
+                        transitionSideNavTo(sideNavs[i])
+                    },
+                    offset: (i==0)?-500:Waypoint.viewportHeight()/3})
+            }
+            setScrollWaypoints()
+
+            new Waypoint({
+            element: document.getElementById('TECHNICAL-SKILLS'),
+            handler: () => {
+                if(!isTech)
+                animateTechSkillBars()
+            },
+            offset: Waypoint.viewportHeight()/3})
+
+            new Waypoint({
+            element: document.getElementById('SOFT-SKILLS'),
+            handler: () => {
+                if(!isSoft)
+                animateSoftSkillBars()
+            },
+            offset:  Waypoint.viewportHeight()/3})
+
+            new Waypoint({
+            element: document.getElementById('OTHER-SKILLS'),
+            handler: () => {
+                if(!isOther)
+                animateOtherSkillBars()
+            },
+            offset:  Waypoint.viewportHeight()/3})
+
+            new Waypoint({
+            element: document.getElementById('CONTACT'),
+            handler: () => {
+                animateContactItems()
+            },
+            offset:  Waypoint.viewportHeight()/2})
+
+        })
     </script>
 </html>
